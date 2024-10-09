@@ -1,0 +1,386 @@
+/* Genel stil ayarları */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Quicksand", sans-serif;
+}
+body {
+    
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    background-image: url('background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Arkaplanın sabit kalmasını sağlar */
+    background-position: center center;
+    
+}
+
+header{
+    margin-top: 100px;
+}
+
+/* Sayfa bölümleri (header, section, footer) */
+header, section, footer {
+    text-align: center;
+    padding: 25px;
+}
+
+/* Görsel Galeri */
+#visuals .image-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+
+#visuals img {
+    max-width: 300px;
+    margin: 30px;
+    border-radius: 20px;
+}
+
+/* Paragraf Kutucukları */
+#paragraphs {
+    background-color: #f2f2f2;
+    padding: 40px;
+    margin: 20px;
+}
+
+/* Sosyal Medya İkonları */
+footer .social-icons {
+    margin-top: 20px;
+}
+
+footer img {
+    max-width: 40px;
+    margin: 0 10px;
+}
+
+/* Diğer stiller */
+
+.iletisim-nav {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.iletisim-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.iletisim-nav li {
+    display: inline;
+    margin-right: 30px;
+}
+
+.iletisim-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+/* Arama Çubuğu Stilleri */
+#search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#search-input {
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .copyright-container p {
+        margin: 0;
+    }
+    
+    .social-media-container a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    
+    .social-media-container i {
+        transition: color 0.3s ease-in-out;
+    }
+    
+    .social-media-container a:hover i {
+        color: #b939b9;
+    }
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    border-radius: 20px;
+    overflow: hidden;
+}
+.searchinput{
+    border: none;
+    padding: 20px;
+    border-radius: 20px 0 0 20px;
+    width: 500px;
+    
+}
+
+button {
+    background-color: #f19be1;
+    border: none;
+    padding: 17px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+button img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    /*filter: invert(1); */
+}
+.center-container {
+    text-align: center;
+}
+
+.custom-button {
+    background-color: #f19be1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px; /* Kenarları yuvarlatmak için */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.custom-button:hover {
+    background-color: #e65de6;
+}
+
+.araButton{
+    background-color: #f19be1;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.araButton:hover {
+    background-color: #e65de6;
+}
+@media only screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-nav, .right-nav {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #search-bar {
+        flex-direction: column;
+    }
+
+    #search-input {
+        width: 100%;
+        border-radius: 20px;
+        margin-bottom: 10px;
+    }
+
+    #search-button {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    .copyright-container p,
+    .social-media-container a {
+        font-size: 14px;
+    }
+
+    .social-media-container i {
+        font-size: 20px;
+    }
+    #visuals .image-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #visuals img {
+        max-width: 100%;
+        height: auto;
+    }
+    .testimonial-container {
+        display: flex;
+        flex-direction: column;
+      }
+    
+      .testimonial {
+        margin-bottom: 20px;
+        word-wrap: break-word; /* Uzun kelimelerin kutu sınırlarını aşmasını engeller */
+      }
+    
+      .stars {
+        font-size: 14px; /* İsterseniz yıldızların boyutunu küçültebilirsiniz */
+      }
+    
+      .name, .comment {
+        font-size: 16px; /* İsim ve yorum metin boyutunu ayarlayabilirsiniz */
+      }
+
+}
+.complaint-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+
+  }
+  
+.complaint-list li {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 20px solid rgb(255, 227, 251);
+    background-color: rgb(255, 227, 251);
+    border-radius: 5px;
+  }
+  
+.complaint-list img {
+    text-align: center;
+    width: 70px; /* İstediğiniz genişliği ayarlayabilirsiniz */
+    height: 70px; /* İstediğiniz yüksekliği ayarlayabilirsiniz */
+    display: block;
+  }
+
+.testimonial-container {
+    display: flex;
+  }
+.paragraph-box{
+    background-color: #f8e4ef;
+    padding: 40px;
+    margin: 20px;
+}
+  
+.testimonial {
+    
+    width: 24%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    max-width: 300px;
+  }
+  
+.stars {
+    font-size: 20px;
+    color: #ffc107; /* Sarı yıldız rengi */
+    display: block;
+  }
+  
+.name {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+  }
+  
+.comment {
+    margin-top: 10px;
+    display: block;
+  }
+  .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center
+}
+
+.rating>input {
+    display: none
+}
+
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 6vw;
+    color: #FFD600;
+    cursor: pointer
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+    opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+
+#commentButton {
+    background-color: #f19be1;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#commentButton:hover {
+    background-color: #e65de6;
+}
+/*
+.nameInput,.commentInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+*/
+  

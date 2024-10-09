@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Quicksand", sans-serif;
+}
+nav ul {
+    display: flex; /* veya grid */
+    justify-content: space-between; /* veya diğer bir değer */
+    list-style: none;
+}
+ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+ul li{
+    list-style: none;
+}
+ul li a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 22px;
+    display: block;
+    padding: 10px 15px;
+    position: relative;
+}
+ul li a:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e088e0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.5s;
+}
+ul li a:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e088e0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: all 0.5s;
+}
+ul li a:hover{
+    color: #e088e0;
+}
+ul li a:hover::before,ul li a:hover::after{
+    transform: scaleX(1);
+}
+.move-left {
+    margin-left: auto;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #f5d4e7;
+    color: #000000;
+    text-align: center;
+    padding: 10px;
+}
+
+.left-nav a {
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+
+.right-nav a {
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.second-right-nav {
+    margin-right: 3rem;
+    border-radius: 15px;
+    border: 2px solid white;
+    transition: all 0.5s;
+} 
+
+.second-right-nav:hover {
+    border: #e088e0;
+    margin-bottom: 2px;
+}
+
+
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 25px;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurucular</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="anaNavbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+    * {
+          font-family: "Quicksand", sans-serif;
+      }
+    body {
+        background-color: #f0f0f0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('background.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Arkaplanın sabit kalmasını sağlar */
+        background-position: center center;
+      }
+      
+      .container {
+        display: flex;
+      }
+      
+      .founder-box {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        text-align: center;
+        padding: 20px;
+      }
+      
+      .founder-box img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+      }
+      
+      .founder-box p {
+        font-weight: bold;
+        margin: 10px 0;
+      }
+      
+      .links a {
+        display: block;
+        margin: 5px 0;
+        text-decoration: none;
+        color: #3498db;
+      }
+      
+      .links a:hover {
+        text-decoration: underline;
+      }
+      
+  </style>
+</head>
+<body>
+  <nav>
+        <ul>
+            <li><a href="anasayfa.html">Site İsmi</a></li>
+            <li><a href="kurucular.html">Kurucular</a></li>
+            <li class="move-left"><a class="second-right-nav" href="yeniSikayet.html">+Şikayet Yaz</a></li>
+        </ul>
+    </nav>
+  <div class="container">
+    <div class="founder-box">
+      <img src="BegümFoto.jpeg" alt="Kurucu 1">
+      <p> &nbsp Begüm Keleş</p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/beg%C3%BCm-kele%C5%9F-a50774232/"><i class="fab fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
+        <a href="https://github.com/begumkls"><i class="fab fa-github" aria-hidden="true"></i>GitHub</a>
+      </div>
+    </div>
+    <div class="founder-box">
+      <img src="SevdeFoto.jpg" alt="Kurucu 3">
+      <p>Sevde Işıl Bodur</p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/sevde-i%C5%9F%C4%B1l-bodur-5b8356288/"><i class="fab fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
+        <a href="https://github.com/sevdeslbodur"><i class="fab fa-github" aria-hidden="true"></i>GitHub</a>
+      </div>
+    </div>
+    <div class="founder-box">
+      <img src="AhsenFoto.jpeg" alt="Kurucu 2">
+      <p>Sueda Ahsen Gökalp</p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/ahsen-g%C3%B6kalp-232974239/"><i class="fab fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
+        <a href="https://github.com/ahsengokalp"><i class="fab fa-github" aria-hidden="true"></i>Github</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

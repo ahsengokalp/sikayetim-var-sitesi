@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navbar.css">
+    <title>Şikayet Listesi</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url('background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Arkaplanın sabit kalmasını sağlar */
+            background-position: center center;
+        }
+    
+        h1 {
+            margin-top: 100px;
+            text-align: center;
+            color: #000000;
+        }
+    
+        input[type="text"] {
+            width: 75%;
+            padding: 8px;
+            margin: 30px auto;
+            box-sizing: border-box;
+            border-radius: 15px;
+            opacity: 0.6;
+
+        }
+        input:focus {
+            border: 2px solid #f99dec;
+        }
+        
+        input:hover {
+            background-color: #eaa1c9;
+        }
+    
+        table {
+            border-collapse: collapse;
+            width: 75%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            opacity: 0.9;
+
+        }
+    
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px;
+        }
+    
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    
+    </style>
+    
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="anasayfa.html">Site İsmi</a></li>
+            <li><a href="kurucular.html">Kurucular</a></li>
+            <li class="move-left"><a class="second-right-nav" href="yeniSikayet.html">+Şikayet Yaz</a></li>
+        </ul>
+    </nav>
+
+    <h1>Şikayet Listesi</h1>
+    <div style="text-align: center;">
+    <input type="text" id="searchInput" placeholder="Şikayet Ara">
+    </div>
+    <table id="complaintTable">
+        <thead>
+            <tr>
+                <th>Şikayet Tarihi</th>
+                <th>Şikayet Sahibi</th>
+                <th>Şikayet Açıklaması</th>
+                <th>Şikayet Durumu</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2023-02-21</td>
+                <td>Sanem Kılıç</td>
+                <td>Ürünüm kırık geldi.</td>
+                <td>İnceleniyor</td>
+                
+            </tr>
+            <tr>
+                <td>2023-11-03</td>
+                <td>Arda Yılmaz</td>
+                <td>Son kullanma tarihi geçmiş</td>
+                <td>İnceleniyor</td>
+                
+            </tr>
+            <tr>
+                <td>2023-27-06</td>
+                <td>Ayse Fatma</td>
+                <td>Ürünüm hala gelmedi.</td>
+                <td>İnceleniyor</td>
+                
+            </tr>
+            <tr>
+                <td>2023-27-05</td>
+                <td>Ahsen Gokalp</td>
+                <td>Ürün görsellerdeki gibi değil.</td>
+                <td>İnceleniyor</td>
+                
+            </tr>
+            <tr>
+                <td>2023-01-01</td>
+                <td>Begüm Keleş</td>
+                <td>Ürünüm kırık geldi.</td>
+                <td>İnceleniyor</td>
+            </tr>
+            <tr>
+                <td>2023-12-04</td>
+                <td>Sevde Bodur</td>
+                <td>Ürünüm hala gelmedi.</td>
+                <td>İnceleniyor</td>
+                
+            </tr>
+            <tr>
+                <td>2023-02-15</td>
+                <td>Mehmet Can</td>
+                <td>Kargom hasarlı geldi.</td>
+                <td>Çözüldü</td>
+            </tr>
+            <tr>
+                <td>2023-03-22</td>
+                <td>Ayşe Nur</td>
+                <td>Ürün iade talebi.</td>
+                <td>İnceleniyor</td>
+            </tr>
+            <tr>
+                <td>2023-02-15</td>
+                <td>Mehmet Kaya</td>
+                <td>Kargom hasarlı geldi.</td>
+                <td>İnceleniyor</td>
+            </tr>
+            <tr>
+                <td>2023-01-01</td>
+                <td>Ahmet Yılmaz</td>
+                <td>Ürünüm hala gelmedi.</td>
+                <td>İnceleniyor</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        // Şikayet inceleme işlevi
+        function incele(sahip,aciklama) {
+            localStorage.setItem('selectedComplaint', sahip);
+            localStorage.setItem('selectdescription',aciklama);
+            window.location.href = 'SikayetCevapKapat.html';
+
+        }
+        
+    
+        $(document).ready(function () {
+            // Şikayet arama işlevi (eski kod)
+            $("#searchInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#complaintTable tbody tr").sort(function(a, b) {
+                    var textA = $(a).text().toLowerCase();
+                    var textB = $(b).text().toLowerCase();
+                    return (textA.indexOf(value) > textB.indexOf(value)) ? 1 : -1;
+                }).appendTo("#complaintTable tbody");
+    
+                $("#complaintTable tbody tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

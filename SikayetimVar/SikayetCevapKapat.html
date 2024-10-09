@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="anaNavbar.css">
+    <title>Şikayet İşlemleri</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+        * {
+             font-family: "Quicksand", sans-serif;
+            }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            background-image: url('background.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Arkaplanın sabit kalmasını sağlama */
+            background-position: center center;
+        }
+    
+        h1 {
+            color: #000000;
+            margin-top: 150px;
+        }
+    
+        #complaintDetails {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+    
+        h2 {
+            color: #333;
+        }
+    
+        p {
+            color: #666;
+        }
+    
+        #cevapKapatForm {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            display: none;
+            opacity: 0.9;
+        }
+    
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+    
+        button {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f5b0fd;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+    
+        button:hover {
+            background-color: #d04dee;
+        }
+    </style>
+    
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#header">Site İsmi</a></li>
+            <li><a href="#header">Kurucular</a></li>
+            <li class="move-left"><a class="second-right-nav" href="#header">+Şikayet Yaz</a></li>
+        </ul>
+    </nav>
+
+
+    <h1>Şikayet İşlemleri</h1>
+
+    <div id="complaintDetails">
+        <h2 id="complaintTitle"></h2>
+        <p id="complaintDescription"></p>
+    </div>
+
+    <div id="cevapKapatForm" style="display: none;">
+        <h2>Şikayete Cevap Ver / Şikayeti Kapat</h2>
+        <textarea id="cevapTextarea" placeholder="Cevap Giriniz"></textarea>
+        <button onclick="cevapVer()">Cevap Ver</button>
+        <button onclick="kapat()">Şikayeti Kapat</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Sayfa yüklendiğinde localStorage'dan seçilen şikayet bilgisini al
+            var selectedComplaint = localStorage.getItem('selectedComplaint');
+            var selectedDescription =localStorage.getItem('selectdescription');
+            // Şikayet bilgilerini ekrana yazdır
+            $("#complaintTitle").text(selectedComplaint);
+            $("#complaintDescription").text(selectedDescription);
+
+            // Cevap/Kapat formunu göster
+            $("#cevapKapatForm").show();
+        });
+
+        function cevapVer() {
+            var cevap = $("#cevapTextarea").val();
+            console.log("Cevap kaydedildi: " + cevap);
+            // Formu temizle
+            $("#cevapTextarea").val("");
+        } 
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // Sayfa yüklendiğinde localStorage'dan seçilen şikayet bilgisini al
+            var selectedComplaint = localStorage.getItem('selectedComplaint');
+            var selectedDescription = localStorage.getItem('selectdescription');
+            // Şikayet bilgilerini ekrana yazdır
+            $("#complaintTitle").text(selectedComplaint);
+            $("#complaintDescription").text(selectedDescription);
+
+            // Cevap/Kapat formunu göster
+            $("#cevapKapatForm").show();
+        });
+
+        function kapat() {
+            console.log("Şikayet kapatıldı");
+
+            // Önce localStorage'dan seçilen şikayet bilgilerini al
+         var selectedComplaint = localStorage.getItem('selectedComplaint');
+
+         // Ardından, Şikayet Listesi sayfasındaki ilgili satırın durumunu "Çözüldü" olarak güncelle
+         $("#complaintTable tbody tr:contains('" + selectedComplaint + "') td:last-child").text("Çözüldü");
+
+          // Formu temizle
+          $("#cevapTextarea").val("");
+        }
+    </script>
+
+
+
+</body>
+</html>

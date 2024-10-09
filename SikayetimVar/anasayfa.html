@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+    <link rel="stylesheet" href="anasayfa.css">
+    <link rel="stylesheet" href="anaNavbar.css">
+    <script>
+        function submitTestimonial() {
+            // Get values from inputs
+            var rating = document.querySelector('input[name="rating"]:checked').value;
+            var name = document.getElementById('nameInput').value;
+            var comment = document.getElementById('commentInput').value;
+    
+            // Create a new testimonial div
+            var newTestimonial = document.createElement('div');
+            newTestimonial.classList.add('testimonial');
+    
+            // Populate the new testimonial div with values
+            newTestimonial.innerHTML = `
+                <div class="stars">${'★'.repeat(parseInt(rating))}</div>
+                <div class="name">${name}</div>
+                <div class="comment">${comment}</div>
+            `;
+    
+            // Append the new testimonial to the testimonial container
+            document.querySelector('.testimonial-container').appendChild(newTestimonial);
+    
+            // Clear input values
+            document.getElementById('nameInput').value = '';
+            document.getElementById('commentInput').value = '';
+            // Optionally, you can clear the rating inputs as well
+            document.querySelector('input[name="rating"]:checked').checked = false;
+        }
+    </script>
+    <script>
+        // JavaScript ile sayfa yönlendirme fonksiyonu
+        function goToAboutPage() {
+            window.location.href = "hakkımızda.html"; // Hedef sayfanın dosya adını belirtin
+        }
+    </script>
+    <script>
+        function Uyarı() {
+            alert("Sikayet Yazabilmeniz İçin Giriş Yapmanız Gerekmektedir!");
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#header">Site İsmi</a></li>
+            <li><a href="kurucular.html">Kurucular</a></li>
+            <li class="move-left"><a href="login.html">Giriş Yap</a></li>
+            <li class="move-left"><a class="second-right-nav" href="#header" onclick="Uyarı()">+Şikayet Yaz</a></li>
+        </ul>
+    </nav>
+
+       <header id="header">
+        <h1>Hoş Geldiniz!</h1>
+        <p>Bizimle İletişime Geçin</p>
+    </header>
+
+    
+    <div class="search-container" style="text-align: center;">
+        <input type="text" class="searchinput" placeholder="Ara...">
+        <button class="araButton" type="submit">Ara</button>
+    </div>
+
+    <section id="description">
+        <p>Merhaba! Şikayet Var sayfasına hoş geldiniz. Biz buradayız, sorunlarınızı çözmek için çalışıyoruz.</p>
+    </section>
+    <div class="search-container">
+        <button class="custom-button"onclick="goToAboutPage()">Hakkımızda</button>
+    </div>
+
+    <section id="visuals">
+        <div class="image-container">
+            
+            <img src="https://infoset.app/blog/wp-content/uploads/2021/12/customer-service-2022-trends-1024x682.jpg" alt="Görsel 1">
+            <img src="https://infoset.app/blog/wp-content/uploads/2021/12/what-is-customer-satisfaction-and-how-to-it-1024x768.jpg" alt="Görsel 2">
+            <img src="https://www.cloud4feed.com/index/assets/images/musteri-deneyimi-olcumu-mobil.jpg" alt="Görsel 3">
+        </div>
+    </section>
+
+    <section id="paragraphs">
+        <div class="paragraph-box">
+            <ul class="complaint-list">
+                <li>
+                  <img class="lazyloaded" data-src="https://cdn.sikayetvar.com/public/images/site-stats/icon-3.svg" decoding="auto" alt="Bireysel Üye Sayısı" src="https://cdn.sikayetvar.com/public/images/site-stats/icon-3.svg">
+                  <span>Sayısız Kullanıcı</span>
+                  
+                </li>
+                <li>
+                  <img class="lazyloaded" data-src="https://cdn.sikayetvar.com/public/images/site-stats/icon-5.svg" decoding="auto" alt="Kayıtlı Marka" src="https://cdn.sikayetvar.com/public/images/site-stats/icon-5.svg">
+                  <span>Pek Çok Kayıtlı Marka</span>
+                </li>
+                <li>
+                  <img class="lazyloaded" data-src="https://cdn.sikayetvar.com/public/images/site-stats/icon-6.svg" decoding="auto" alt="Çözülen Şikayet" src="https://cdn.sikayetvar.com/public/images/site-stats/icon-6.svg">
+                  <span>Hızlı Çözüm</span>
+                </li>
+                <li>
+                  <img class="lazyloaded" data-src="https://cdn.sikayetvar.com/public/images/site-stats/icon-4.svg" decoding="auto" alt="Son 30 Günde Ziyaretçi" src="https://cdn.sikayetvar.com/public/images/site-stats/icon-4.svg">
+                  <span>Anında Cevap</span>
+                </li>
+              </ul>
+              
+        </div>
+        <div class="paragraph-box">
+            <div class="testimonial-container">
+                <div class="testimonial">
+                  <div class="stars">★★★★★</div>
+                  <div class="name">Mehmet Demir</div>
+                  <div class="comment">Problemim 24 saat içinde çözüldü teşekkürler şikayetimvardunya.com ekibi!!!</div>
+                </div>
+                <div class="testimonial">
+                  <div class="stars">★★★★★</div>
+                  <div class="name">Ahmet Ayık</div>
+                  <div class="comment">Kullanım kolaylığı şaka mıııı</div>
+                </div>
+                <div class="testimonial">
+                  <div class="stars">★★★★★</div>
+                  <div class="name">Berke Kaya</div>
+                  <div class="comment">Bu sayfa olaaayyyyyy</div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <div class="name">Azra Göksu</div>
+                    <div class="comment">Cok beğendim ayrıca site sahipleri cok tatlı ve ilgili</div>
+                  </div>
+
+        </div>
+        <h1>Siz De Bizi Değerlendirin!</h1>
+            <div class="rating">
+                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+            </div>
+            <div>
+                <div class="nameinputdiv">
+                    <input type="text" id="nameInput" placeholder="Adınız Soyadınız" style="border: 1px solid #ccc;
+                    border-radius: 5px;width: 100%;padding: 10px;margin-bottom: 15px;">
+                </div>
+                <div class="commentdiv">
+                <textarea id="commentInput" placeholder="Yorumunuz" style="border: 1px solid #ccc;
+                border-radius: 5px;width: 100%;padding: 10px;margin-bottom: 15px;"></textarea>
+
+                </div>
+                <button id="commentButton" onclick="submitTestimonial() " style="border-radius: 50%;">Gönder</button>
+            </div>
+
+    </section>
+
+    <footer id="footer">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-lZ9l5o1T+p9U+fl6b6C5Lx5Xl5D1/KVoWZKj/6+ZGaZl/GtAbeIkjS0a5MVM1YK1" crossorigin="anonymous"> 
+
+        <div class="copyright-container">
+            <p>&copy; 2023 . Tüm hakları saklıdır.</p>
+        </div>
+        <div class="social-media-container">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    
+    </footer>
+
+
+    <!--<script src="anasayfa.js"></script>-->
+</body>
+</html>

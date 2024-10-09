@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+  }
+  
+body {
+  margin: 0;
+  background-image: url("background.png");
+  background-position: center;
+  background-size: cover;
+}
+
+
+nav ul {
+  display: flex; /* veya grid */
+  justify-content: space-between; /* veya diğer bir değer */
+  list-style: none;
+}
+ul{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+ul li{
+  list-style: none;
+}
+ul li a{
+  text-decoration: none;
+  color: #000000;
+  font-size: 22px;
+  display: block;
+  padding: 10px 15px;
+  position: relative;
+}
+ul li a:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e088e0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.5s;
+}
+ul li a:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e088e0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 0.5s;
+}
+ul li a:hover{
+  color: #e088e0;
+}
+ul li a:hover::before,ul li a:hover::after{
+  transform: scaleX(1);
+}
+.move-left {
+  margin-left: auto;
+}
+
+nav {
+  margin-left: 450px;
+  top: 0;
+  justify-content: space-between;
+  color: #000000;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+}
+  
+  
+.sidenav {
+  height: 100%;
+  width: 450px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #1f1f1ff8;
+  overflow-x: hidden;
+  border-top-right-radius: 1.5rem;
+}
+ 
+.sidenav a {
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  margin-top: 50px;
+  font-size: 1.25rem;
+}
+  
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+} 
+
+.content {
+  padding-left: 20px;  
+}
+
+.kart{
+  margin-left: 650px;
+}
+
+.profilBaslik{
+  margin-left: 650px;
+  margin-bottom: 50px;
+}
+
+.bilgiler {
+  width: 600px;
+  background-color: #ffffffce;
+  padding: 10px 20px 10px 20px;
+  border-radius: 2rem;
+  margin-bottom: 20px;    
+}
+
+.formGroup {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: left; 
+}
+
+.field-title {
+    font-weight: bold;
+    display: block; 
+    margin-bottom: 5px;
+}
+
+.input-field {
+    width: calc(100% - 10px); 
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 0.1px solid #ccc;
+    margin-bottom: 8px;
+    margin-top: 20px;
+}
+
+.btn-edit {
+    background-color: #ed62fc;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 5px;
+    border-radius: 4px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.btn-edit:hover {
+    background-color: #d04dee;
+}
+
+
+.edit-mode .input-field {
+    border: 1px solid #ed62fc;
+    pointer-events: auto;
+}
+
+.edit-mode .btn-edit {
+    background-color: #ccc;
+    color: #333;
+    cursor: not-allowed;
+}
+
+svg{
+  size: 2rem;
+}
+.icon{
+  margin-right: 8px;
+  
+}
+
+@media (max-width: 800px) {
+  .sidenav {
+      width: 100%;
+      height: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      border-radius: 0;
+      background-color: #1f1f1ff8; 
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+  }
+
+  .content {
+      margin-top: 80px; 
+      margin-left: 0;
+      margin-top: 60px;
+  }
+
+
+  .sidenav a {
+      margin-top: 0;
+      font-size: 1rem;
+  }
+
+  .btn-edit {
+      font-size: 12px;
+      padding: 6px 8px;
+      top: 5px;
+  }
+  
+  
+}
+@media (max-width: 800px) {
+  .kart {
+    margin-left: 450px; 
+  }
+  
+  .profilBaslik {
+    margin-left: 450px; /
+  }
+}
+
+@media (max-width: 800px) {
+  .kart {
+    margin-left: 20px; 
+    margin-top: 100px;
+  }
+
+  .profilBaslik {
+    margin-left: 20px; 
+  }
+
+  .content {
+    padding-left: 10px; 
+    margin-top: 60px;
+  }
+
+  .sidenav {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: 0;
+    background-color: #1f1f1ff8; 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+  }
+
+  .sidenav a {
+    margin-top: 0;
+    font-size: 1rem;
+  }
+
+  .btn-edit {
+    font-size: 12px;
+    padding: 6px 8px;
+    top: 5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
